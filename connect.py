@@ -28,7 +28,7 @@ def atualizarPessoa(cpf: int, model:Pessoa):
         print("Esse usuário não existe")
 def mostrarTabelaTodos():
     todos = pd.DataFrame(bd)  
-    return todos        
+    return todos.to_html()        
 
     
 
