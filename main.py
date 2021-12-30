@@ -1,6 +1,6 @@
 from connect import atualizarPessoa, deletarPessoa, inserir, mostrarTabelaTodos, mostrarTodos
 from model import Pessoa
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 import pandas as pd
 from flask.globals import request
 
@@ -18,7 +18,15 @@ def cadastrar():
     dataNascimento = request.form["dataNascimento"]
     pessoa = Pessoa(cpf,nome,dataNascimento)
     inserir(pessoa)
-    return render_template("index.html")
+    return redirect("/")
+
+@app.route('/deletar/<int:cpf>')
+def deletar(cpf):
+    try:
+        deletarPessoa(cpf)
+        return redirect("/")
+    except:
+        return "Algo de errado aconteceu"
 if __name__=="__main__":
     app.run(debug=True)
 

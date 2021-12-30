@@ -15,8 +15,8 @@ def mostrarTodos():
     return todos
 def deletarPessoa(cpf: int):
     '''Busca um CPF e deleta o registro do modelo encontrado'''
-    if bd.search(usuario.CPF==cpf):
-        bd.remove(usuario.CPF==cpf)
+    if bd.search(usuario.CPF==str(cpf)):
+        bd.remove(usuario.CPF==str(cpf))
     else:
         print("Usuário não encontrado")
 def atualizarPessoa(cpf: int, model:Pessoa):

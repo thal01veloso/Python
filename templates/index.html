@@ -30,12 +30,15 @@
             <th scope="col">CPF</th>
             <th scope="col">Nome</th>
             <th scope="col">Data de Nascimento</th>
+            <th scope="col">Acões</th>
         </tr>
         {% for item in result %}
         <tr>
             <td>{{item["CPF"]}}</td>
             <td>{{item["Nome"]}}</td>
             <td>{{item["DataNascimento"]}}</td>
+            <td><a class="btn btn-danger" href='/deletar/{{item["CPF"]}}'>Deletar</a></td>
+            <td><a>Atualizar</a></td>
         </tr>
         {% endfor %}
     </table>
