@@ -11,6 +11,7 @@ def inserir(model: Pessoa):
     "DataNascimento":model.dataNascimento})
 def mostrarTodos():
     '''Mostra todos os contatos cadastrados no banco de dados'''
+   
     todos = bd.all()
     return todos
 def deletarPessoa(cpf: int):
@@ -21,14 +22,16 @@ def deletarPessoa(cpf: int):
         print("Usuário não encontrado")
 def atualizarPessoa(cpf: int, model:Pessoa):
     """Atualiza um modelo no banco de dados"""
-    if bd.search(usuario.CPF==cpf):
-        bd.remove(usuario.CPF==cpf)
+    if bd.search(usuario.CPF==str(cpf)):
+        bd.remove(usuario.CPF==str(cpf))
         inserir(model)
     else:
         print("Esse usuário não existe")
 def mostrarTabelaTodos():
     todos = pd.DataFrame(bd)  
     return todos.to_html()        
+def buscarPorCPF(cpf):
+    return bd.search(usuario.CPF==str(cpf))
 
     
 
