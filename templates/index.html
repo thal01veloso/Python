@@ -39,7 +39,7 @@
             <td>{{item["Nome"]}}</td>
             <td>{{item["DataNascimento"]}}</td>
             <td><a class="btn btn-danger" href='/deletar/{{item["CPF"]}}'><i class="bi bi-trash"> </i>Deletar</a></td>
-            <td><a href='/atualizar/{{item["CPF"]}}'class="btn btn-secondary">Atualizar</a></td>
+            <td><a href='/atualizar/{{item["CPF"]}}'class="btn btn-secondary"><i class="bi bi-arrow-clockwise"> </i>Atualizar</a></td>
         </tr>
         {% endfor %}
     </table>
