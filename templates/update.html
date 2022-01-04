@@ -7,7 +7,9 @@
 </head>
 <body>
   <div class="container-sm">
-  <h1>Cadastrar Pessoas</h1>
+    <div class="row">
+      <h1>Cadastrar Pessoas</h1>
+  <div class="col-4">
     <form action="{{pessoa[0]['CPF']}}" method="POST">
         <div class="mb-3">
           <label for="cpf" class="form-label">CPF</label>
@@ -28,8 +30,8 @@
           </div>
         <button type="submit" class="btn btn-primary">Atualizar Pessoa</button>
       </form>
-    <hr>
-    </table>
+      </div>
+    </div>
   </div>
   </body>
 </html>
