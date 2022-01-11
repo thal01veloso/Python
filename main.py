@@ -1,4 +1,4 @@
-from connect import atualizarPessoa, buscarPorCPF, deletarPessoa, inserir, mostrarTabelaTodos, mostrarTodos
+from connect import atualizarPessoa, buscarPorCPF, count, deletarPessoa, inserir, mostrarTabelaTodos, mostrarTodos
 from model import Pessoa
 from flask import Flask, render_template, redirect
 import pandas as pd
@@ -8,8 +8,10 @@ app = Flask(__name__)
 @app.route('/')
 def index():
     result = mostrarTodos()
+    total_cadastrado = count()
     return render_template("index.html",
-    result = result)
+    result = result,
+    total = total_cadastrado)
 
 @app.route("/cadastrar", methods=["POST","GET"])
 def cadastrar():

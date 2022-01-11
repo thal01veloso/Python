@@ -32,6 +32,9 @@ def mostrarTabelaTodos():
     return todos.to_html()        
 def buscarPorCPF(cpf):
     return bd.search(usuario.CPF==str(cpf))
+def count():
+    total_cadastrado = len(bd.all())
+    return total_cadastrado
 
     
 
