@@ -18,7 +18,8 @@ def cadastrar():
     nome = request.form["nome"]
     cpf = request.form["cpf"]
     dataNascimento = request.form["dataNascimento"]
-    pessoa = Pessoa(cpf,nome,dataNascimento)
+    estadoCivil = request.form["estadoCivil"]
+    pessoa = Pessoa(cpf,nome,estadoCivil,dataNascimento)
     inserir(pessoa)
     return redirect("/")
 @app.route('/atualizar/<int:cpf>',methods=["POST","GET"])
@@ -26,8 +27,9 @@ def atualizar(cpf):
     if request.method =='POST':
         nome = request.form["nome"]
         cpf = request.form["cpf"]
+        estadoCivil = request.form["estadoCivil"]
         dataNascimento = request.form["dataNascimento"]
-        pessoa = Pessoa(cpf,nome,dataNascimento)
+        pessoa = Pessoa(cpf,nome,estadoCivil,dataNascimento)
         try:
             atualizarPessoa(cpf,pessoa)
             return redirect('/')
@@ -36,9 +38,6 @@ def atualizar(cpf):
     else:
         pessoa = buscarPorCPF(cpf)
         return render_template('update.html',pessoa = pessoa)
-        
-
-
 @app.route('/deletar/<int:cpf>')
 def deletar(cpf):
     try:

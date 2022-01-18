@@ -21,6 +21,18 @@
           <input type="text" class="form-control" id="nome" name=nome>
         </div>
         <div class="mb-3">
+          <label for="estadoCivil" class="form-label">Estado Civil</label><br>
+          <select name="estadoCivil"
+           class="form-select"
+            aria-label="Default select example">
+            <option>Solteiro</option>
+            <option>Casado</option>
+            <option>Separado</option>
+            <option>Divorciado</option>
+            <option>Viúvo</option>
+          </select>
+        </div>
+        <div class="mb-3">
             <label for="dataNascimento" class="form-label">Data de Nascimento</label>
             <input type="date" class="form-control" id="dataNascimento" name="dataNascimento">
           </div>
@@ -36,6 +48,7 @@
           <tr align="center">
               <th>CPF</th>
               <th>Nome</th>
+              <th>Estado Civil</th>
               <th>Data de Nascimento</th>
               <th>Acões</th>
           </tr>
@@ -44,6 +57,7 @@
           <tr align="center">
               <td>{{item["CPF"]}}</td>
               <td>{{item["Nome"]}}</td>
+              <td>{{item["EstadoCivil"]}}</td>
               <td>{{item["DataNascimento"]}}</td>
               <td><a class="btn btn-danger" href='/deletar/{{item["CPF"]}}'>
                 <i class="bi bi-trash"> </i>Deletar</a>

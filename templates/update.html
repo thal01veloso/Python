@@ -24,6 +24,20 @@
           <input type="text" class="form-control" id="nome" 
           name=nome
           value='{{pessoa[0]["Nome"]}}'>
+          <div class="mb-3">
+            <label for="estadoCivil" class="form-label">Estado Civil</label><br>
+            <select 
+            name="estadoCivil"
+            class="form-select"
+            aria-label="Default select example"
+            value='{{pessoa[0]["estadoCivil"]}}'>
+              <option>Solteiro</option>
+              <option>Casado</option>
+              <option>Separado</option>
+              <option>Divorciado</option>
+              <option>Viúvo</option>
+            </select>
+          </div>
         </div>
         <div class="mb-3">
             <label for="dataNascimento" class="form-label">Data de Nascimento</label>

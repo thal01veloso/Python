@@ -8,6 +8,7 @@ def inserir(model: Pessoa):
     '''Insere um modelo no banco de dados'''
     bd.insert({"CPF":model.CPF,
     "Nome":model.nome,
+    "EstadoCivil":model.estadoCivil,
     "DataNascimento":model.dataNascimento})
 def mostrarTodos():
     '''Mostra todos os contatos cadastrados no banco de dados'''
